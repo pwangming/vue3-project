@@ -5,29 +5,21 @@
       <el-form-item label="姓名" prop="name">
         <el-input v-model="ruleForm.name" aria-placeholder="请输入姓名" />
       </el-form-item>
-      <el-form-item label="用户名">
-        <el-input v-model="ruleForm.username" prop="username" aria-placeholder="请输入用户名" />
+      <el-form-item label="用户名" prop="username">
+        <el-input v-model="ruleForm.username" aria-placeholder="请输入用户名" />
       </el-form-item>
-      <el-form-item label="密码">
-        <el-input
-          v-model="ruleForm.password"
-          prop="password"
-          type="password"
-          aria-placeholder="请输入密码"
-        />
+      <el-form-item label="密码" prop="password">
+        <el-input v-model="ruleForm.password" type="password" aria-placeholder="请输入密码" />
       </el-form-item>
-      <el-form-item label="确认密码">
-        <el-input
-          v-model="ruleForm.againPwd"
-          prop="againPwd"
-          type="password"
-          aria-placeholder="请重复密码"
-        />
+      <el-form-item label="确认密码" prop="againPwd">
+        <el-input v-model="ruleForm.againPwd" type="password" aria-placeholder="请重复密码" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm">注册</el-button>
-        <el-button type="danger" @click="resetForm">重置</el-button>
-        <el-button type="success">去登录</el-button>
+        <div class="btn-box">
+          <el-button type="primary" @click="submitForm">注册</el-button>
+          <el-button type="danger" @click="resetForm">重置</el-button>
+          <el-button type="success">去登录</el-button>
+        </div>
       </el-form-item>
     </el-form>
   </div>
@@ -35,7 +27,7 @@
 
 <script lang="ts" setup>
 import { ref, reactive } from 'vue'
-import type { ComponentSize, FormInstance, FormRules } from 'element-plus'
+import type { FormInstance, FormRules } from 'element-plus'
 
 interface RuleForm {
   name: string
@@ -99,8 +91,8 @@ const resetForm = (formEl: FormInstance | undefined) => {
 
 <style lang="scss" scoped>
 .register {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,6 +106,13 @@ const resetForm = (formEl: FormInstance | undefined) => {
   .form-box {
     width: 400px;
     height: 250px;
+
+    .btn-box {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 }
 </style>

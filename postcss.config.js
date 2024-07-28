@@ -1,4 +1,7 @@
 const postcssNormalize = require('postcss-normalize')
+const postcssPresetEnv = require('postcss-preset-env')
+const postcssScss = require('postcss-scss')
+const postcssAutoprefixer = require('autoprefixer')
 module.exports = {
-  plugins: [postcssNormalize, require('postcss-scss'), require('autoprefixer')]
+  plugins: [postcssNormalize, postcssPresetEnv, postcssScss, postcssAutoprefixer]
 }
